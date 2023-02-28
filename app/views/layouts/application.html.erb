@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>EXEPTION</title>
@@ -11,8 +12,34 @@
   </head>
 
   <body>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div class="left-navbar">
+    </div>
+    <a class="navbar-brand" href="#">
+      <%= image_tag "logo-navbar.png" %>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <a class="btn btn-ghost" href="#">Add an offer</a>
+          <li class="nav-item dropdown">
+            <%= image_tag "icon-logo-user.png", class:"avatar dropdown-toggle", id:"navbarDropdown", data: {bs_toggle:"dropdown"},"aria-haspopup": true, "aria-expanded": false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">My Account</a>
+                <a class="dropdown-item" href="#">Last books</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+    <%# <%= render "shared/navbar" %>
+    <%# <%= render "shared/flashes" %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
   </body>
 </html>
