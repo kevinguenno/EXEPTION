@@ -1,5 +1,5 @@
 class CastlesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: %i[show index]
   before_action :set_castle, only: %i[show]
 
   def show
@@ -19,5 +19,5 @@ class CastlesController < ApplicationController
   def castle_params
     params.require(:caslte).permit(:title, :description, :location, :price, :capacity, :photo, :category)
   end
-  
+
 end
