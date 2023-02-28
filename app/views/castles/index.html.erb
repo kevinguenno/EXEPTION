@@ -1,0 +1,22 @@
+<h1>
+All castles
+</h1>
+
+<div class="cards">
+  <% @castles.each do |castle| %>
+    <%= link_to castle_path(castle) do %>
+      <div class="card">
+        <div>
+          <div class="card-image" style="background-image: url(<%= if castle.photo then castle.photo end %>)">
+          </div>
+          <div class="card-descriptions">
+          <h3><%= castle.title %></h3>
+          <h6><span class="icone-location"><i class="fa-sharp fa-solid fa-location-dot"></i></span><%= castle.location %></h6>
+          <h6><span class="icone-capacity"><i class="fa-sharp fa-solid fa-user-group"></i></span><%= castle.capacity %></h6>
+          <p><strong><%= castle.price %>€</strong> par nuit</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
