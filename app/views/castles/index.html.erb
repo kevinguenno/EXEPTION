@@ -1,15 +1,15 @@
-<h1>
+<h1 class="index-h1">
 All castles
 </h1>
 
-<div class="cards">
+<div class="index-cards">
   <% @castles.each do |castle| %>
     <%= link_to castle_path(castle) do %>
-      <div class="card">
+      <div class="index-card">
         <div>
-          <div class="card-image" style="background-image: url(<%= if castle.photo then castle.photo end %>)">
+          <div class="index-card-image" style="background-image: url('<%= if castle.photo then cl_image_path castle.photo.key end %>')">
           </div>
-          <div class="card-descriptions">
+          <div class="index-card-descriptions">
           <h3><%= castle.title %></h3>
           <h6><span class="icone-location"><i class="fa-sharp fa-solid fa-location-dot"></i></span><%= castle.location %></h6>
           <h6><span class="icone-capacity"><i class="fa-sharp fa-solid fa-user-group"></i></span><%= castle.capacity %></h6>
