@@ -1,0 +1,22 @@
+<p>TO ADD: NAVBAR</p>
+
+<div class="card-trip">
+  <%= image_tag "show_chenonceau_2.jpg" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @castle.title %></h2>
+      <p><%= @castle.description %></p>
+      <p><%= @castle.capacity %></p>
+    </div>
+    <div>
+      <h2 class="card-trip-pricing"><%= @castle.price %> €/day</h2>
+      <%= simple_form_for [@castle, @booking] do |f| %>
+        <%= f.input :check_in %>
+        <%= f.input :check_out %>
+        <%= f.input :total_price %>
+        <%= f.input :validates %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
