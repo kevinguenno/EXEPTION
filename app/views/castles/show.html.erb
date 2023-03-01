@@ -1,22 +1,30 @@
-<p>TO ADD: NAVBAR</p>
-
 <div class="card-trip">
-  <%= image_tag "show_chenonceau_2.jpg" %>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @castle.title %></h2>
-      <p><%= @castle.description %></p>
-      <p><%= @castle.capacity %></p>
+  <%= cl_image_tag @castle.photo.key %>
+  <div class="card-trip-explications">
+    <div class="card-trip-body">
+      <div class="card-trip-infos">
+        <h4><strong><span class="title-lign"><%= @castle.title %></span></strong></h4>
+        <br>
+        <p class="card-trip-capacity"><i class="fa-sharp fa-solid fa-user-group"></i> <strong><%=@castle.capacity %></strong> <em>travellers</em></p>
+        <p class="card-trip-description"><em><%= @castle.description %></em></p>
+      </div>
+      <div class="card-trip-owner">
+        <br>
+        <h2><strong>Information about the owner</strong></h2>
+        <br>
+        <h3><%= cl_image_tag @castle.user.photo.key, class:"owner-image"%> <strong><%= @castle.user.first_name %> <%= @castle.user.last_name %></strong></h3>
+        <p><em><%= @castle.user.description %></em></p>
+      </div>
     </div>
-    <div>
-      <h2 class="card-trip-pricing"><%= @castle.price %> €/day</h2>
-      <%= simple_form_for [@castle, @booking] do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :check_out %>
-        <%= f.input :total_price %>
-        <%= f.input :validates %>
-        <%= f.submit %>
-      <% end %>
+    <div class="card-trip-form">
+        <%= simple_form_for [@castle, @booking] do |f| %>
+          <h6 class="card-trip-pricing"> <strong><%= @castle.price %></strong>€ par nuit</h6>
+          <br>
+          <%= f.input :check_in, html5: true, label: "CHECK-IN"%>
+          <%= f.input :check_out, html5: true, label: "CHECK-OUT"%>
+          <%= f.input :total_price, label: "TOTAL" %>
+          <%= f.submit "Reserve", class:"button-booking"%>
+        <% end %>
     </div>
   </div>
 </div>
