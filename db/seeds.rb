@@ -28,7 +28,8 @@ owner1.photo.attach(io: file, filename: "homme1.jpg", content_type: "image/jpeg"
 
 castle1 = Castle.new({
   title: "Incredible Castle",
-  description: "Incredible French Castle",
+  description: "Come and spend your holidays in a relaxing place, with family or friends.
+  The castle has a large heated swimming pool, a barbecue and an outdoor kitchen to enjoy your summer evenings.",
   location: "Tours",
   price: 1435,
   capacity: 25,
@@ -195,7 +196,7 @@ booking1 = Booking.new({
   check_in: Date.new(2023, 03, 01),
   check_out: Date.new(2023, 03, 15),
   total_price: 6525,
-  validates: "Pending"
+  validates: "pending"
 })
 booking1.user = renter1
 booking1.castle = castle1
@@ -217,7 +218,7 @@ booking2 = Booking.new({
   check_in: Date.new(2023, 06, 02),
   check_out: Date.new(2023, 06, 15),
   total_price: 10400,
-  validates: "Pending"
+  validates: "pending"
 })
 booking2.user = renter2
 booking2.castle = castle2
@@ -239,7 +240,7 @@ booking3 = Booking.new({
   check_in: Date.new(2023, 8, 01),
   check_out: Date.new(2023, 8, 07),
   total_price: 4675,
-  validates: "Pending"
+  validates: "pending"
 })
 booking3.user = renter3
 booking3.castle = castle3
@@ -262,7 +263,7 @@ booking4 = Booking.new({
   check_in: Date.new(2023, 05, 02),
   check_out: Date.new(2023, 05, 04),
   total_price: 3400,
-  validates: "Pending"
+  validates: "pending"
 })
 booking4.user = renter4
 booking4.castle = castle4
@@ -285,7 +286,7 @@ booking5 = Booking.new({
   check_in: Date.new(2023, 9, 12),
   check_out: Date.new(2023, 9, 20),
   total_price: 6275,
-  validates: "Pending"
+  validates: "pending"
 })
 booking5.user = renter5
 booking5.castle = castle5
@@ -309,7 +310,7 @@ booking6 = Booking.new({
   check_in: Date.new(2023, 07, 01),
   check_out: Date.new(2023, 07, 15),
   total_price: 8320,
-  validates: "Pending"
+  validates: "pending"
 })
 booking6.user = renter6
 booking6.castle = castle6
