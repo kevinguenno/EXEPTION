@@ -1,0 +1,21 @@
+<h1 id="bookings-h1">Your Bookings</h1>
+<div class="bookings-grid">
+  <% @bookings.each do |booking| %>
+    <%= link_to castle_path(booking.castle), class: "bookings-card-product" do %>
+      <div class="booking-infos">
+        <div class="booking-img"  style="background-image: url('<%= if booking.castle.photo then cl_image_path booking.castle.photo.key end %>')">
+        </div>
+        <div class="booking-text">
+        <h5><%= booking.castle.title %></h5>
+        <h6><span class="icone-location"><i class="fa-sharp fa-solid fa-location-dot"></i></span><%= booking.castle.location %></h6>
+        <p><strong>from</strong> <%= booking.check_in.strftime("%A %d %B %Y")%></p>
+        <p><strong>to</strong> <%= booking.check_out.strftime("%A %d %B %Y") %></p>
+        <p><strong><%= booking.total_price %> €</strong></p>
+        </div>
+      </div>
+      <div class="bookings-validations">
+        <p id="btn-pending">pending...</p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

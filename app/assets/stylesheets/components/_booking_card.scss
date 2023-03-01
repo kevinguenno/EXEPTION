@@ -1,0 +1,90 @@
+#bookings-h1 {
+  text-align: center;
+  margin: 40px;
+}
+
+.bookings-grid {
+  display: grid;
+  margin: auto;
+  margin-top: 0px;
+  grid-gap: 30px;
+  width: 680px;
+
+
+  .bookings-card-product {
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.504);
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    color: inherit;
+    text-decoration: none;
+
+    .booking-infos {
+      display: flex;
+
+
+      .booking-img {
+        padding-left: 160px;
+        background-size: cover;
+        background-position: center;
+
+      }
+
+      .booking-text {
+        margin: 25px;
+
+      }
+    }
+
+    .bookings-validations {
+      margin-right: 100px;
+      // margin-right: 50px;
+      #btn-pending {
+        // border: solid grey;
+        color: grey;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 50px;
+
+      }
+
+    }
+
+    &:hover{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.504);
+
+    }
+  }
+}
+
+
+
+
+.bookings-card-product-img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.bookings-card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bookings-card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.bookings-card-product .card-product-infos {
+  padding: 16px;
+}
