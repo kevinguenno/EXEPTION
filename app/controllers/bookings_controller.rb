@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def create
@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.castle_id = params[:castle_id]
 
     if @booking.save
-      redirect_to castle_path(@booking.castle_id)
+      redirect_to bookings_path
     else
       redirect_to castle_path(params[:castle_id])
     end
