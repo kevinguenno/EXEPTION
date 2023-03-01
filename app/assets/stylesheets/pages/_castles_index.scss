@@ -9,8 +9,8 @@
   grid-gap: 30px;
   margin: 30px;
   a {
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
+    color: inherit;
+    text-decoration: inherit;
   }
 }
 
@@ -23,13 +23,10 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.504);
 
     .index-card-image {
-      // padding-top: 250px;
       padding-top: 290px;
     }
     .index-card-descriptions {
-      // margin: 20px;
-      // margin-top: 20px;
-      // padding-bottom: 10px;
+
       margin: 10px;
       margin-top: 10px;
       margin-bottom: 0px;
@@ -44,12 +41,16 @@
 
 .index-card-image {
   background-size: cover;
+  background-position: center;
   padding-top: 250px;
   border-radius: 10px 10px 0px 0px;
-  background-position: center;
   transition: 0.9s;
 }
 
+.icone-location {
+    font-size: small;
+    margin-right: 10px;
+  }
 
 .index-card-descriptions {
   margin: 20px;
@@ -61,10 +62,7 @@
     color: rgb(107, 107, 107);
     transition: 0.9s;
   }
-  .icone-location {
-    font-size: small;
-    margin-right: 10px;
-  }
+
 
   .icone-capacity {
     font-size: small;
