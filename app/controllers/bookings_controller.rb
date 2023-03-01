@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.validates = "pending"
     if @booking.save
       redirect_to castle_path(@booking.castle_id)
     else
@@ -16,6 +17,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:check_in, :check_out, :total_price, :validates)
+    params.require(:booking).permit(:check_in, :check_out, :total_price)
   end
 end
