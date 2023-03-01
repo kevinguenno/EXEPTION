@@ -1,9 +1,9 @@
-  h1  {
+.index-h1  {
     text-align: center;
     margin: 30px;
   }
 
-.cards {
+.index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
@@ -14,43 +14,52 @@
   }
 }
 
-.card {
+.index-card {
+  height: 405px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.504);
-  transition: 0.3s;
+  transition: 0.9s;
   &:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.504);
-    .card-image {
-      padding-top: 260px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.504);
+
+    .index-card-image {
+      // padding-top: 250px;
+      padding-top: 290px;
     }
-    .card-descriptions {
-      margin: 15px;
+    .index-card-descriptions {
+      // margin: 20px;
+      // margin-top: 20px;
+      // padding-bottom: 10px;
+      margin: 10px;
       margin-top: 10px;
       margin-bottom: 0px;
+      padding-bottom: 0px;
+
+      h6, p {
+        margin: 0;
+      }
     }
   }
 }
 
-.card-image {
+.index-card-image {
   background-size: cover;
-  // width: 100px;
-  // height: 100px;
   padding-top: 250px;
   border-radius: 10px 10px 0px 0px;
   background-position: center;
   transition: 0.9s;
-
 }
 
 
-.card-descriptions {
+.index-card-descriptions {
   margin: 20px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
   transition: 0.9s;
 
   h6 {
     color: rgb(107, 107, 107);
+    transition: 0.9s;
   }
   .icone-location {
     font-size: small;
@@ -64,6 +73,10 @@
 
   p {
     text-align: right;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    transition: 0.9s;
+
   }
 
 }
