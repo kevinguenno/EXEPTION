@@ -1,0 +1,14 @@
+
+
+  <%= simple_form_for [:owner, @castle] do |f| %>
+    <%= f.input :title, placeholder: 'title', label: false, input_html: {class:"formulaire"} %>
+    <%= f.input :description, placeholder: 'write a description', label: false, input_html: {class:"formulaire"} %>
+    <%= f.input :location, placeholder: 'location', label: false, input_html: {class:"formulaire"} %>
+    <%= f.input :category, placeholder:'category', collection:['Countryside','Sea and beach'], label: false, prompt:"chose a category", input_html: {class:"formulaire-vol-2"} %>
+    <%= f.input :price, placeholder: 'price', label: false, input_html: {class:"formulaire"} %>
+    <%= f.input :capacity, placeholder: 'capacity', label: false, input_html: {class:"formulaire"} %>
+    <%= f.input :photo, as: :file, label: false, input_html: {class:"formulaire"} %>
+    <%= f.submit class:"button-28"%>
+  <% end %>
+
+  <%# sweet-alerts %>
