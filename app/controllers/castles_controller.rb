@@ -4,11 +4,17 @@ class CastlesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @markers = [{
+      lat: @castle.latitude,
+      lng: @castle.longitude,
+      marker_html: render_to_string(partial: "marker")
+    }]
   end
 
   def index
     @castles = Castle.all
   end
+
 
   private
 
@@ -19,5 +25,4 @@ class CastlesController < ApplicationController
   def castle_params
     params.require(:caslte).permit(:title, :description, :location, :price, :capacity, :photo, :category)
   end
-
 end

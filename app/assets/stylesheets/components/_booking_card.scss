@@ -8,7 +8,7 @@
   margin: auto;
   margin-top: 0px;
   grid-gap: 30px;
-  width: 680px;
+  width: 790px;
 
 
   .bookings-card-product {
@@ -20,12 +20,12 @@
     display: flex;
     align-items: center;
     transition: 0.3s;
-    color: inherit;
-    text-decoration: none;
+
 
     .booking-infos {
       display: flex;
-
+      color: inherit;
+      text-decoration: none;
 
       .booking-img {
         padding-left: 160px;
@@ -41,15 +41,119 @@
     }
 
     .bookings-validations {
-      margin-right: 100px;
-      // margin-right: 50px;
-      #btn-pending {
-        // border: solid grey;
+      flex-direction: column;
+      text-align: center;
+
+      .bookings-situation {
         color: grey;
-        padding: 10px;
+        display: grid;
+        gap: 25px;
+        padding: 3px;
         padding-left: 20px;
         padding-right: 20px;
         border-radius: 50px;
+
+        .confirmation-status-pending {
+          font-size: 15px;
+
+        }
+      }
+
+      #text {
+        font-size: 15px;
+      }
+
+      .booking-cancel {
+        color: rgb(189, 78, 78);
+        text-decoration: none;
+        font-size: 30px;
+      }
+
+      .bookings-acceptation {
+
+        .a {
+          text-decoration: none;
+        }
+
+        .btn-accept {
+          border: solid grey;
+          color: rgb(255, 255, 255);
+          background-color: green;
+          text-decoration: none;
+          padding: 3px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 50px;
+
+          background-color: #C2FBD7;
+          border-radius: 100px;
+          box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+          color: green;
+          cursor: pointer;
+          display: inline-block;
+          font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+          padding: 7px 20px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 250ms;
+          border: 0;
+          font-size: 16px;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+
+          &:hover{
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+          }
+        }
+
+        .btn-decline {
+          border: solid grey;
+          color: rgb(255, 255, 255);
+          text-decoration: none;
+          background-color: red;
+          padding: 3px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 50px;
+
+          background-color: #fbc2c2;
+          border-radius: 100px;
+          box-shadow: rgba(187, 44, 44, 0.2) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.15) 0 1px 2px,rgba(187, 44, 44, 0.15) 0 2px 4px,rgba(187, 44, 44, 0.15) 0 4px 8px,rgba(187, 44, 44, 0.15) 0 8px 16px,rgba(187, 44, 44, 0.15) 0 16px 32px;
+          color: rgb(128, 0, 0);
+          cursor: pointer;
+          display: inline-block;
+          font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+          padding: 7px 20px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 250ms;
+          border: 0;
+          font-size: 16px;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+
+          &:hover{
+            box-shadow: rgba(187, 44, 44, 0.35) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.25) 0 1px 2px,rgba(187, 44, 44, 0.25) 0 2px 4px,rgba(187, 44, 44, 0.25) 0 4px 8px,rgba(187, 44, 44, 0.25) 0 8px 16px,rgba(187, 44, 44, 0.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+          }
+
+        }
+
+        .btn-cancel-decision {
+          color: grey;
+          text-decoration: none;
+          padding: 3px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 50px;
+
+          &:hover{
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.504);
+            }
+        }
 
       }
 
@@ -87,4 +191,15 @@
 
 .bookings-card-product .card-product-infos {
   padding: 16px;
+}
+
+#no-decoration {
+  text-decoration: none;
+  color: grey;
+  border: solid 1px lightgrey;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  
+
 }
