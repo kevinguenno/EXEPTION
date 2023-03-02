@@ -16,15 +16,43 @@
         <p><em><%= @castle.user.description %></em></p>
       </div>
     </div>
-    <div class="card-trip-form">
+    <div class="card-trip-form" data-controller="totalprice" data-price="<%= @castle.price %>">
         <%= simple_form_for [@castle, @booking] do |f| %>
-          <h6 class="card-trip-pricing"> <strong><%= @castle.price %></strong>€ par nuit</h6>
+          <h6 class="card-trip-pricing" > <strong><%= @castle.price %></strong>€ per night</h6>
           <br>
-          <%= f.input :check_in, html5: true, label: "CHECK-IN"%>
-          <%= f.input :check_out, html5: true, label: "CHECK-OUT"%>
-          <%= f.input :total_price, label: "TOTAL" %>
-          <%= f.submit "Reserve", class:"button-booking"%>
+          <%= f.input :check_in, html5: true, label: "CHECK-IN", input_html: {data: { totalprice_target: 'checkin', action: "input->totalprice#calculatePrice"}} %>
+          <%= f.input :check_out, html5: true, label: "CHECK-OUT", input_html: {data: { totalprice_target: 'checkout', action: "totalprice#calculatePrice" }}  %>
+          <%= f.submit "Reserve", class:"button-booking" %>
+          <% f.input :total_price, label: "TOTAL", id:"totalinput" %>
         <% end %>
+        <br>
+        <div id="bill" class="d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <div>
+              <h3 id="loc"> <%= @castle.price %> x</h3>
+            </div>
+            <div>
+              <h3 id="totalloc"> € </h3>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div>
+              <h3> Cleaning fee </h3>
+            </div>
+            <div>
+              <h3 id="clfee"> € </h3>
+            </div>
+          </div>
+          <div class="total-line"></div>
+          <div class="d-flex justify-content-between">
+            <div>
+              <h3> Total </h3>
+            </div>
+            <div>
+              <h3 id="total"> € </h3>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
