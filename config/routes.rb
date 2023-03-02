@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create]
   end
 
-  resources :bookings, only: %i[index]
+  resources :bookings, only: %i[index update destroy]
 
   namespace :owner do
     resources :castles, only: %i[index new create]
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       member do
         patch :accept
         patch :decline
+        patch :cancel_decision
       end
     end
   end
