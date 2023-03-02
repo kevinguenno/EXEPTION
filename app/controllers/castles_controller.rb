@@ -10,6 +10,7 @@ class CastlesController < ApplicationController
     @castles = Castle.all
   end
 
+
   private
 
   def set_castle
