@@ -1,0 +1,27 @@
+.footer-copyright {
+  font-family: $body-font;
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+  padding-top: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  a {
+    color: black;
+  }
+}
+
+.footer-links {
+  i {
+    font-size: 20px;
+  }
+}
