@@ -6,8 +6,11 @@ export default class extends Controller {
  static targets = ["checkin", "checkout"]
 
   connect() {
-    console.log("total-price-controller connected!");
-    console.log(this.element.dataset.price);
+    // console.log("total-price-controller connected!");
+    // console.log(this.element.dataset.price);
+    const divbill = document.getElementById("bill");
+    // console.log(divbill)
+    divbill.style.visibility = "hidden";
   }
 
   calculatePrice(event) {
@@ -19,12 +22,19 @@ export default class extends Controller {
     const checkout = new Date(this.checkoutTarget.value);
     const night = (checkout.getTime() - checkin.getTime())/(1000*60*60*24);
 
+    const divbill = document.getElementById("bill");
+    console.log(divbill)
+    divbill.style.display = "none";
+
     const nan = true
     if (isNaN(night)) { nan = false };
     if (nan) {
+      const divbill = document.getElementById("bill");
+      divbill.style.visibility = "visible";
       // calcule et rempli la ligne prix de la location
       const loc = document.getElementById("loc");
-      loc.innerHTML = `<h3>${castlePrice} x ${night}</h3>`;
+      if (night === 1) {loc.innerHTML = `<h3>${castlePrice} € x ${night} night </h3>`;}
+      else {loc.innerHTML = `<h3>${castlePrice} € x ${night} nights </h3>`;}
       const totalLoc = (night * castlePrice);
       const tloc = document.getElementById("totalloc");
       tloc.innerHTML = `<h3>${totalLoc} €</h3>`;
@@ -41,8 +51,7 @@ export default class extends Controller {
 
       // envoie le total à l'input TOTAL de simple_form
       const totalinput = document.querySelector("#booking_total_price");
-      totalinput.inputvalue = bill
+      totalinput.value = bill;
     }
   }
-
 }
