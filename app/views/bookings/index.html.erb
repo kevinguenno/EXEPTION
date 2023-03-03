@@ -1,4 +1,4 @@
-<h1 id="bookings-h1">Your Bookings as a renter</h1>
+<h1 id="bookings-h1">Your Bookings as a Renter</h1>
 <div class="bookings-grid">
   <% @bookings.sort.each do |booking| %>
     <div class="bookings-card-product">
@@ -15,53 +15,26 @@
       <% end %>
       <div class="bookings-validations">
         <div class="bookings-situation">
-          <p class="confirmation-status-pending"><strong>
-            <%=
-              case booking.validates
-              when "accepted"
-                "Booking accepted"
-              when "declined"
-                "Booking declined"
-              else
-                "Waiting for acceptation"
-              end
-            %></strong>
-          </p>
+          <p class="confirmation-status-current"><strong>
+            <% case booking.validates %>
+            <% when "accepted" %>
+              <%= "Booking accepted" %>
+              <i class="fa-regular fa-circle-check"></i>
+            <% when "declined" %>
+              <%= "Booking declined" %>
+              <i class="fa-regular fa-circle-xmark"></i>
+            <% else %>
+              <%= "Waiting for acceptation" %>
+            <% end %>
+          </strong></p>
         </div>
-        <% case current_user %>
-        <% when booking.user %>
-          <%=
-                  link_to booking_path(booking),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel ?"},
-                  class:"booking-cancel" do
-           %>
-            <i class="fa-solid fa-square-xmark"></i>
-           <% end %>
-        <% when current_user == booking.castle.user %>
-          <div class="bookings-acceptation">
-            <div>
-              <%= link_to 'Owner only : Accept',
-                accept_owner_booking_path(booking),
-                data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                class:"btn-accept"
-              %>
-            </div>
-            <div>
-              <%= link_to 'Owner only : Decline',
-                decline_owner_booking_path(booking),
-                data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                class:"btn-decline"
-              %>
-            </div>
-            <div>
-              <%= link_to 'Owner only : Cancel decision',
-                cancel_decision_owner_booking_path(booking),
-                data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                calss:"btn-cancel-decision"
-              %>
-            </div>
-          </div>
-        <% end %>
+        <%=
+            link_to 'Cancel my booking',
+            booking_path(booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to Cancel your booking ?"},
+            calss:"btn-cancel-decision",
+            id:"no-decoration"
+        %>
       </div>
     </div>
   <% end %>

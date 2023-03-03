@@ -4,19 +4,27 @@ All castles
 
 <div class="index-cards">
   <% @castles.each do |castle| %>
-    <%= link_to castle_path(castle) do %>
-      <div class="index-card">
-        <div>
-          <div class="index-card-image" style="background-image: url('<%= if castle.photo then cl_image_path castle.photo.key end %>')">
-          </div>
-          <div class="index-card-descriptions">
-          <h3><%= castle.title %></h3>
-          <h6><span class="icone-location"><i class="fa-sharp fa-solid fa-location-dot"></i></span><%= castle.location %></h6>
-          <h6><span class="icone-capacity"><i class="fa-sharp fa-solid fa-user-group"></i></span><%= castle.capacity %></h6>
-          <p><strong><%= castle.price %>€</strong> / night</p>
+    <% unless current_user == castle.user %>
+      <%= link_to castle_path(castle) do %>
+        <div class="index-card">
+          <div>
+            <div>
+              <div class="index-card-image" style="background-image: url('<%= if castle.photo then cl_image_path castle.photo.key end %>')">
+              </div>
+              <div class="index-card-image-lineargradiant">
+              </div>
+            </div>
+            <div class="index-card-descriptions">
+              <h3><strong><%= castle.title %></strong></h3>
+              <h6><span class="icone-location"><i class="fa-sharp fa-solid fa-location-dot"></i></span><%= castle.location %></h6>
+              <div class="people-price">
+                <h6><span class="icone-capacity"><i class="fa-sharp fa-solid fa-user-group"></i></span><%= castle.capacity %></h6>
+                <h6><strong><%= castle.price %>€</strong> / night</h6>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
