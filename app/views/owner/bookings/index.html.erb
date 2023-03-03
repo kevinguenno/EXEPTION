@@ -14,48 +14,50 @@
         </div>
       <% end %>
       <div class="bookings-validations">
-        <div class="bookings-situation">
-          <p class="confirmation-status-pending"><strong>
+        <div class="bookings-situation" id="bookings-situation-owner">
+          <div class="confirmation-status-pending">
             <% case booking.validates %>
             <% when "accepted" %>
-                <p id="text">Booking accepted</p>
+                <p id="text"><strong>Booking accepted</strong>
+                <i class="fa-regular fa-circle-check"></i></p>
                 <div>
-                  <%= link_to 'Cancel',
+                  <%= link_to 'Cancel my decision',
                     cancel_decision_owner_booking_path(booking),
-                    data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                    calss:"btn-cancel-decision",
+                    data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to Cancel your decision?"},
+                    calss:"btn-cancel-decision-owner",
                     id:"no-decoration"
                   %>
                 </div>
             <% when "declined" %>
-                <p id="text">Booking declined</p>
+                <p id="text"><strong>Booking declined</strong>
+                <i class="fa-regular fa-circle-xmark"></i></p>
                 <div>
-                  <%= link_to cancel_decision_owner_booking_path(booking),
-                    data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                    calss:"btn-cancel-decision" do
+                  <%= link_to 'Cancel my decision',
+                    cancel_decision_owner_booking_path(booking),
+                    data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to Cancel your decision?"},
+                    calss:"btn-cancel-decision-owner",
+                    id:"no-decoration"
                   %>
-                  <i class="fa-solid fa-square-xmark"></i>
-                  <% end %>
                 </div>
             <% else %>
-              <p id="text">Waiting for acceptation</p>
-              <div class="bookings-acceptation">
-                <%= link_to 'Accept',
-                  accept_owner_booking_path(booking),
-                  data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                  class:"btn-accept"
-                %>
-                <%= link_to 'Decline',
-                  decline_owner_booking_path(booking),
-                  data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to accept?"},
-                  class:"btn-decline"
-                %>
-              </div>
+              <p id="text"><strong>Waiting for acceptation</strong></p>
             <% end%>
-            </strong>
-          </p>
+          </div>
         </div>
-
+        <% if booking.validates == "pending" %>
+          <div class="bookings-acceptation">
+            <%= link_to 'Accept',
+              accept_owner_booking_path(booking),
+              data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to Accept the offer?"},
+              class:"btn-accept"
+            %>
+            <%= link_to 'Decline',
+              decline_owner_booking_path(booking),
+              data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to Decline the offer?"},
+              class:"btn-decline"
+            %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

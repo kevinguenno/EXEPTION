@@ -43,24 +43,39 @@
     .bookings-validations {
       flex-direction: column;
       text-align: center;
+      width: 240px;
 
       .bookings-situation {
-        color: grey;
+        color: rgb(42, 42, 42);
         display: grid;
-        gap: 25px;
-        padding: 3px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 30px;
+        // gap: 25px;
+        // padding: 3px;
+        // padding-left: 20px;
+        // padding-right: 20px;
         border-radius: 50px;
 
-        .confirmation-status-pending {
+        .confirmation-status-current {
           font-size: 15px;
-
         }
+
+        .fa-circle-xmark {
+        color: #f57c7c;
+        }
+
+        .fa-circle-check {
+          color: #6cce69;
+        }
+      }
+
+      #bookings-situation-owner {
+        padding: 0px;
       }
 
       #text {
         font-size: 15px;
+        padding: 30px;
+
       }
 
       .booking-cancel {
@@ -71,6 +86,9 @@
 
       .bookings-acceptation {
 
+        display: flex;
+        justify-content: space-around;
+
         .a {
           text-decoration: none;
         }
@@ -78,81 +96,67 @@
         .btn-accept {
           border: solid grey;
           color: rgb(255, 255, 255);
-          background-color: green;
-          text-decoration: none;
+          color:#6cce69;
+          border: solid 1px #6cce69;
           padding: 3px;
           padding-left: 20px;
           padding-right: 20px;
-          border-radius: 50px;
-
-          background-color: #C2FBD7;
-          border-radius: 100px;
-          box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-          color: green;
-          cursor: pointer;
+          border-radius: 10px;
           display: inline-block;
-          font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
           padding: 7px 20px;
           text-align: center;
           text-decoration: none;
-          transition: all 250ms;
-          border: 0;
           font-size: 16px;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
+          transition: 0.3s;
 
           &:hover{
-            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-            transform: scale(1.05) rotate(-1deg);
+            background-color: #6cce6910;
+            box-shadow: 0px 0px 5px #6cce695f;;
           }
         }
 
         .btn-decline {
           border: solid grey;
           color: rgb(255, 255, 255);
-          text-decoration: none;
-          background-color: red;
+          color:rgb(189, 78, 78);
+          border: solid 1px rgb(189, 78, 78);
           padding: 3px;
           padding-left: 20px;
           padding-right: 20px;
-          border-radius: 50px;
-
-          background-color: #fbc2c2;
-          border-radius: 100px;
-          box-shadow: rgba(187, 44, 44, 0.2) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.15) 0 1px 2px,rgba(187, 44, 44, 0.15) 0 2px 4px,rgba(187, 44, 44, 0.15) 0 4px 8px,rgba(187, 44, 44, 0.15) 0 8px 16px,rgba(187, 44, 44, 0.15) 0 16px 32px;
-          color: rgb(128, 0, 0);
-          cursor: pointer;
+          border-radius: 10px;
           display: inline-block;
-          font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
           padding: 7px 20px;
           text-align: center;
           text-decoration: none;
-          transition: all 250ms;
-          border: 0;
           font-size: 16px;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
+          transition: 0.3s;
 
           &:hover{
-            box-shadow: rgba(187, 44, 44, 0.35) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.25) 0 1px 2px,rgba(187, 44, 44, 0.25) 0 2px 4px,rgba(187, 44, 44, 0.25) 0 4px 8px,rgba(187, 44, 44, 0.25) 0 8px 16px,rgba(187, 44, 44, 0.25) 0 16px 32px;
-            transform: scale(1.05) rotate(-1deg);
+            background-color: #f57c7c10;
+            box-shadow: 0px 0px 5px #f57c7c5f;;
           }
-
         }
 
         .btn-cancel-decision {
-          color: grey;
-          text-decoration: none;
+          border: solid grey;
+          color: rgb(255, 255, 255);
+          color:grey;
+          border: solid 1px grey;
           padding: 3px;
           padding-left: 20px;
           padding-right: 20px;
-          border-radius: 50px;
+          border-radius: 10px;
+          display: inline-block;
+          padding: 7px 20px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          transition: 0.3s;
 
           &:hover{
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.504);
-            }
+            background-color: rgba(128, 128, 128, 0.104);
+            box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.104);;
+          }
         }
 
       }
@@ -200,6 +204,6 @@
   padding: 10px;
   border-radius: 50px;
   font-size: 12px;
-  
+
 
 }
