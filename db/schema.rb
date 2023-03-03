@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_105149) do
   create_table "bookings", force: :cascade do |t|
     t.date "check_in"
     t.date "check_out"
-    t.string "validates" # ajouter une migration pour attribuer une valeur par défaut (ex: waiting for confirmation)
+    t.string "validates"
     t.integer "total_price"
     t.bigint "castle_id", null: false
     t.bigint "user_id", null: false
