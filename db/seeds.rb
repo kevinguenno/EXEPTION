@@ -176,6 +176,16 @@ file = File.open(Rails.root.join("db/seeds/images/castles/chateau6.jpg"))
 castle6.photo.attach(io: file, filename: "chateaucountryside.jpg", content_type: "image/jpeg")
 castle6.save!
 
+booking61 = Booking.new({
+  check_in: Date.new(2023, 8, 01),
+  check_out: Date.new(2023, 8, 07),
+  total_price: 4675,
+  validates: "pending"
+})
+booking61.user = owner6
+booking61.castle = castle1
+booking61.save!
+
 puts "Owner created"
 
 ##################################
