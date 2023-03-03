@@ -59,7 +59,12 @@
 </div>
     <%= yield %>
     <%# <%= render "shared/navbar" %>
-    <%# <%= render "shared/flashes" %>
+     <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
+    
     <div class="footer">
     <div class="footer-links">
       <a href="#"><i class="fab fa-instagram"></i></a>

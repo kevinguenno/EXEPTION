@@ -10,7 +10,7 @@ class Owner::CastlesController < ApplicationController
     @castle = Castle.new(castle_params)
     @castle.user_id = current_user.id
     @castle.save
-    redirect_to castles_path
+    redirect_to castles_path, notice: "You successfully add a castle !"
   end
 
   private
