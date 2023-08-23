@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-
 gem "cloudinary"
 gem "geocoder"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -47,6 +46,9 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 gem "sassc-rails"
+
+gem "bootstrap", "~> 5.2"
+
 gem 'devise'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
